@@ -5,12 +5,14 @@ import MainLayout from "@/Components/MainLayout/MainLayout";
 import Image from "next/image";
 import React from "react";
 
+
 const page = () => {
+  
   return (
     <div className="bg-white h-full relative overflow-hidden bg-gradient-to-b from-white to-orange-50 ">
       <MainLayout>
         {/* <BookingForm/> */}
-        <TicketReady/>
+        {/* <TicketReady/> */}
         <Image
           src="/HomeChairs.svg"
           alt="Home"
@@ -20,7 +22,7 @@ const page = () => {
         />
         <div className=" mx-2.5 md:mx-5 lg:mx-[50px] xl:mx-[100px]">
           <div className="xl:grid xl:grid-cols-7 gap-2.5 md:gap-5 xl:gap-[84px]">
-            <div className=" col-span-5">
+            <div className="xl:pb-10 col-span-5">
               <div>
                 <h2 className="text-[32px] md:text-[48px] xl:leading-[64.8px] font-bold text-primary-dark">
                   Target Edu Expo 2024
@@ -115,8 +117,8 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-2">
-              <div className="mt-5 xl:mt-8 flex flex-col gap-2.5 md:gap-5 lg:gap-10 xl:gap-[63px] justify-between  bg-[#F4F1F299] rounded-[14px] p-2.5 md:p-5 lg:p-6">
+            <div className="relative col-span-2">
+              <div id="sticky-div" className="mt-5 xl:mt-8 flex flex-col gap-2.5 md:gap-5 lg:gap-10 xl:gap-[63px] justify-between  bg-[#F4F1F299] rounded-[14px] p-2.5 md:p-5 lg:p-6">
                 <div className="flex flex-col gap-2.5 md:gap-3.5 lg:gap-[18px]">
                   <p className="font-normal text-[14px] md:text-[16px] leading-[21.6px] text-secondary-black flex items-center gap-2.5 md:gap-3">
                     <Image

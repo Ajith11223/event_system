@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { SelectPicker } from "rsuite";
-import "rsuite/dist/rsuite.min.css";
 import "./BookingForm.css";
 
 const BookingForm = () => {

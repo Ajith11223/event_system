@@ -1,4 +1,3 @@
-const { Placeholder } = require('rsuite');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

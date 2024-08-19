@@ -1,10 +1,57 @@
+'use client'
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const page = () => {
+  // const [user, setUser] = useState(null);
+
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       const response = await fetch('/api/user');
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! status: ${response.status}`);
+  //       }
+  //       const data = await response.json();
+  //       setUser(data);
+  //     } catch (error) {
+  //       console.error('An error occurred:', error);
+  //     }
+  //   };
+
+  //   fetchUser();
+  // }, []);
+  // console.log(user)
+  const [username,setUserName]=useState('')
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
+
+  const handleSubmit = async()=>{
+    console.log(username)
+    const dataObj = {
+      username,email,password
+    }
+
+    try {
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataObj),
+      });
+
+      const data = await response.json();
+      console.log(data)
+      if (response.ok) {
+        console.log(data.message);
+      } 
+    } catch (error) {
+      console.error('Signup error:', error);
+    }
+  }
   return (
     <div className="flex flex-1 h-screen">
-      
       <div className="relative hidden w-0 flex-1 lg:block">
         <img
           alt=""
@@ -23,7 +70,7 @@ const page = () => {
 
           <div className="mt-10">
             <div>
-              <form action="#" method="POST" className="space-y-3">
+              <div className="space-y-3">
                 <div>
                   <label
                     htmlFor="email"
@@ -37,6 +84,8 @@ const page = () => {
                       name="username"
                       type="text"
                       required
+                      value={username}
+                      onChange={(e)=> setUserName(e.target.value)}
                       className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -54,6 +103,8 @@ const page = () => {
                       name="email"
                       type="email"
                       required
+                      value={email}
+                      onChange={(e)=> setEmail(e.target.value)}
                       autoComplete="email"
                       className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -73,6 +124,8 @@ const page = () => {
                       name="password"
                       type="password"
                       required
+                      value={password}
+                      onChange={(e)=> setPassword(e.target.value)}
                       autoComplete="current-password"
                       className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -98,13 +151,13 @@ const page = () => {
 
                 <div>
                   <button
-                    type="submit"
+                  onClick={handleSubmit}
                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Sign up
                   </button>
                 </div>
-              </form>
+              </div>
             </div>
 
             <div className="mt-10">

@@ -1,7 +1,31 @@
+'use client'
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 const page = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const handleLogin = async()=>{
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setMessage(`Welcome, ${data.user.username}`);
+      } else {
+        setMessage(`Error: ${data.message}`);
+      }
+    } catch (error) {
+      setMessage('An error occurred during login');
+      console.error('Login error:', error);
+    }
+  }
   return (
     <div>
       <div className="flex h-screen flex-1 flex-col justify-center py-10 sm:px-6 lg:px-8">
@@ -15,7 +39,7 @@ const page = () => {
 
         <div className="mt-2.5 sm:mx-auto sm:w-full sm:max-w-[480px]">
           <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
-            <form action="#" method="POST" className="space-y-4">
+            <div action="#" method="POST" className="space-y-4">
               <div>
                 <label
                   htmlFor="email"
@@ -28,6 +52,8 @@ const page = () => {
                     id="email"
                     name="email"
                     type="email"
+                    value={email}
+                    onChange={(e)=> setEmail(e.target.value)}
                     required
                     autoComplete="email"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -47,6 +73,8 @@ const page = () => {
                     id="password"
                     name="password"
                     type="password"
+                    value={password}
+                    onChange={(e)=> setPassword(e.target.value)}
                     required
                     autoComplete="current-password"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -82,13 +110,13 @@ const page = () => {
 
               <div>
                 <button
-                  type="submit"
+                  onClick={handleLogin}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Sign in
                 </button>
               </div>
-            </form>
+            </div>
 
             <div>
               <div className="relative mt-5">

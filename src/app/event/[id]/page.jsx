@@ -7,11 +7,9 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <div className="bg-white h-full relative overflow-hidden bg-gradient-to-b from-white to-orange-50 ">
+      <div className="bg-white h-screen  relative  bg-gradient-to-b from-white to-orange-50 ">
         <MainLayout>
-          {/* <BookingForm />
-           */}
-             <TicketReady/>
+          <BookingForm />
         </MainLayout>
       </div>
     </>

@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import MainBg from "../../../public/TicketGreenBg.svg";
 import Image from "next/image";
@@ -5,8 +6,14 @@ import "./TicketReady.css";
 import { LuDownload } from "react-icons/lu";
 import { HiMiniArrowUturnRight } from "react-icons/hi2";
 import { TbListDetails } from "react-icons/tb";
+import { useSearchParams } from 'next/navigation';
+import QRCode from "react-qr-code";
 
 export default function TicketReady() {
+  const searchParams = useSearchParams();
+
+  const id = searchParams.get('ticket');
+  console.log(id)
   return (
     <div className=" min-h-[1100px] md:min-h-[800px] lg:min-h-[900px] bg-gradient-to-r from-[#F4E6DA] to-[#F7ECE1] relative z-0 ">
       <div
@@ -58,7 +65,7 @@ export default function TicketReady() {
                     Target Edu Expo 2024
                   </h2>
                   <p className="font-normal text-[14px] md:text-[16px] md:leading-[21.6px] text-[#7C7A7A]">
-                    ID; 12345
+                    ID; {id}
                   </p>
                 </div>
                 <div className="grid flex-col md:grid-cols-5 gap-2.5 md:gap-5">
@@ -102,12 +109,13 @@ export default function TicketReady() {
                 Scan for entry
               </p>
               <div className="p-2.5 md:p-5 bg-[#DED6D633] rounded-xl">
-                <Image
+                {/* <Image
                   src="/QRCode.svg"
                   alt="QR Code"
                   width={141}
                   height={141}
-                />{" "}
+                />{" "} */}
+                <QRCode value={id} />
               </div>
             </div>
           </div>

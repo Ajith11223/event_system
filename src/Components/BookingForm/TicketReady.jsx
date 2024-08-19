@@ -1,22 +1,23 @@
 import React from "react";
 import MainBg from "../../../public/TicketGreenBg.svg";
 import Image from "next/image";
+import "./TicketReady.css";
 
 export default function TicketReady() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#D6E7E2] to-[#E9F2ED] p-8 relative z-0">
+    <div className="min-h-screen bg-gradient-to-r from-[#F4E6DA] to-[#F7ECE1]  relative z-0">
       <div
-        className="absolute opacity-[60%] top-0 w-full"
+        className="absolute opacity-[60%] top-0 w-full hidden lg:block"
         style={{
           paddingBottom: `${(455 / 1440) * 100}%`, // Aspect ratio (262px height for 1443px width)
           backgroundImage: `url(${MainBg.src})`,
-          backgroundPosition: "top right",
+          backgroundPosition: "top ",
           backgroundRepeat: "no-repeat",
-          width: "100%",
+          backgroundSize: "cover",
         }}
       ></div>
-      <div className=" absolute flex flex-col mt-5 md:mt-10 lg:mt-[57px] items-center w-full">
-        <div className="text-center flex flex-col gap-2.5 md:gap-5 lg:gap-6  mt-5 md:mt-10 lg:mt-[57px]">
+      <div className=" absolute flex flex-col mt-20 items-center w-full">
+        <div className="text-center flex flex-col gap-2.5 md:gap-5 lg:gap-6  mt-5 md:mt-10 lg:mt-20">
           <div className="flex justify-center items-center ">
             <Image
               src="/TicketReady.svg"
@@ -36,47 +37,12 @@ export default function TicketReady() {
           </div>
         </div>
 
-        {/* Ticket Section */}
-        {/* <div className="bg-[#F4F1F299] opacity-[60%]  rounded-lg  p-2.5 md:p-5 lg:p-6 flex justify-between items-center">
-          <div className="bg-white">
-          <div className="flex items-center">
-            <Image
-            src="/ChairSquareRounded.svg"
-            alt="Ticket"
-            width={256}
-            height={225}
-            />
-            <div>
-              <h3 className="text-xl font-bold">Target Edu Expo 2024</h3>
-              <p className="text-gray-600">
-                Venue: International School Riyadh
-              </p>
-              <p className="text-gray-600">Time: International School Riyadh</p>
-            </div>
-          </div>
-          <div className="text-right">
-            <p className="text-gray-600">ID: 12345</p>
-            <p className="text-gray-600">Date: 13 Sep 2024</p>
-            <p className="text-gray-600">Tickets: 1</p>
-          </div>
-          <div className="ml-6 border-l pl-6">
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <img
-                src="/path/to/qr-code.jpg" // Replace with actual QR code path
-                alt="QR Code"
-                className="w-16 h-16"
-              />
-              <p className="text-gray-600 text-center mt-2">Scan for entry</p>
-            </div>
-          </div>
-          </div>
-        </div> */}
 
-        <div className="relative  rounded-lg  p-2.5 md:p-5 lg:p-6 flex justify-between items-center mt-5 md:mt-10 lg:mt-[57px]">
+        <div className="relative  rounded-lg  p-2.5 md:p-5 lg:p-6 flex justify-between items-center mt-5 md:mt-10 lg:mt-[57px] mx-2.5 md:mx-5 lg:mx-[50px] xl:mx-[100px]">
           <div className="absolute inset-0 bg-[#F4F1F2] opacity-60 rounded-lg pointer-events-none"></div>
-          <div className="bg-white relative p-2.5 md:p-3 rounded-[18px]">
-            <div className="grid  grid-cols-5">
-              <div className="flex items-center col-span-1">
+          <div className="grid  grid-cols-5 bg-white relative divide-x-[2px] divide-dashed  rounded-[18px]"
+          >
+              <div className="flex items-center col-span-1 p-2.5 md:p-3  ">
                 <Image
                   src="/ChairSquareRounded.svg"
                   alt="Ticket"
@@ -84,12 +50,53 @@ export default function TicketReady() {
                   height={225}
                 />
               </div>
-              <div className="col-span-3 p-2.5 md:p-5 lg:p-[30px]">
+              <div className="col-span-3 p-2.5 md:p-5 lg:p-[30px]  ">
                 <div className="flex flex-col gap-2.5 md:gap-5 lg:gap-6">
-                  <div className="w-full flex justify-between items-center"></div>
+                  <div className="w-full flex justify-between items-center">
+                    <h2 className="text-[20px] md:text-[24px] xl:leading-[32.4px] font-bold text-primary-dark">
+                      Target Edu Expo 2024
+                    </h2>
+                    <p className="font-normal text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
+                      ID; 12345
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-5 gap-2.5 md:gap-5">
+                    <div className="grid col-span-3 flex-col gap-2">
+                      <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
+                        venue
+                      </p>
+                      <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
+                        International School Riyadh
+                      </h5>
+                    </div>
+                    <div className="grid col-span-2 flex-col gap-2">
+                      <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
+                        Date
+                      </p>
+                      <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
+                        13 Sep 2024
+                      </h5>
+                    </div>
+                    <div className="grid col-span-3 flex-col gap-2">
+                      <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
+                        Time
+                      </p>
+                      <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
+                        4:00 pm
+                      </h5>
+                    </div>
+                    <div className="grid col-span-2 flex-col gap-2">
+                      <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
+                        Tickets
+                      </p>
+                      <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
+                        1
+                      </h5>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className=" col-span-1 flex justify-end flex-col items-center gap-2.5 md:gap-3">
+              <div className=" col-span-1 flex justify-end flex-col items-center gap-2.5 md:gap-3 p-2.5 md:p-3">
                 <p className="font-medium text-[14px] leading-[18.9px] text-[#7C7A7A]">
                   Scan for entry
                 </p>
@@ -101,7 +108,6 @@ export default function TicketReady() {
                     height={141}
                   />{" "}
                 </div>
-              </div>
             </div>
           </div>
         </div>

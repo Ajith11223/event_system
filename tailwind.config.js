@@ -1,3 +1,5 @@
+const { Placeholder } = require('rsuite');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -15,12 +17,15 @@ module.exports = {
       colors: {
         primary: {
           dark: '#333233',
-          heading:"#121012"
+          heading:"#121012",
+          bgDark:"#1E1E1E",
+          Placeholder:"#B48F8F"
         },
         secondary:{
           dark: '#595659',
           black:"#1F1F1F"
-        }
+        },
+        HeadingBlack:"#060707"
       }
     },
   },

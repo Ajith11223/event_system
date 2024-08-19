@@ -1,0 +1,36 @@
+.rs-picker-default .rs-picker-toggle.rs-btn{
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: white;
+}
+@media (min-width: 768px) {
+    .rs-picker-caret-icon,
+    .rs-picker-clean {
+      margin-top: 6px;
+    }
+  }
+  .rs-picker-toggle-placeholder {
+    font-size: 14px;
+    line-height: 18.9px;
+    font-weight: 400; /* Normal font weight */
+    color: #B48F8F !important;
+  }
+  .rs-picker-toggle-value{
+    color:black !important;
+  }
+  /* styles.css */
+.custom-checkbox {
+  background-color: black !important;
+  border: 1px solid #D1D5DB !important; /* equivalent to border-gray-300 in Tailwind */
+  border-radius: 0.25rem !important; /* equivalent to rounded in Tailwind */
+}
+
+.custom-checkbox:active {
+  background-color: #1E1E1E !important; /* Replace with your actual color variable */
+}
+
+.custom-checkbox:checked {
+  background-color: #333233 !important; /* Replace with your actual color variable */
+}

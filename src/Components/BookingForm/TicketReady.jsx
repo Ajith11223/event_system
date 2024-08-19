@@ -1,48 +1,56 @@
-import React from 'react';
+import React from "react";
+import MainBg from "../../../public/TicketGreenBg.svg";
+import Image from "next/image";
 
 export default function TicketReady() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#D6E7E2] to-[#E9F2ED] p-8">
-      <div className="max-w-5xl mx-auto">
-        
-
-        {/* Confirmation Message */}
-        <div className="text-center mb-8 mt-20">
-          <div className="flex justify-center items-center mb-4">
-            <div className="bg-green-500 text-white rounded-full p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
+    <div className="min-h-screen bg-gradient-to-r from-[#D6E7E2] to-[#E9F2ED] p-8 relative z-0">
+      <div
+        className="absolute opacity-[60%] top-0 w-full"
+        style={{
+          paddingBottom: `${(455 / 1440) * 100}%`, // Aspect ratio (262px height for 1443px width)
+          backgroundImage: `url(${MainBg.src})`,
+          backgroundPosition: "top right",
+          backgroundRepeat: "no-repeat",
+          width: "100%",
+        }}
+      ></div>
+      <div className=" absolute flex flex-col mt-5 md:mt-10 lg:mt-[57px] items-center w-full">
+        <div className="text-center flex flex-col gap-2.5 md:gap-5 lg:gap-6  mt-5 md:mt-10 lg:mt-[57px]">
+          <div className="flex justify-center items-center ">
+            <Image
+              src="/TicketReady.svg"
+              alt="Ticket Ready"
+              height={51.5}
+              width={51.5}
+            />
           </div>
-          <h2 className="text-3xl font-bold">You’re All Set! Your Ticket is Ready! 🎉</h2>
-          <p className="text-gray-600 mt-2">
-            Your ticket has been sent via email and WhatsApp. We’re excited to have you join us!
-          </p>
+          <div className="flex flex-col gap-2.5 md:gap-3.5 ">
+            <h2 className="text-[24px] lg:text-[32px] lg:leading-[43.2px] text-HeadingBlack font-bold">
+              You’re All Set! Your Ticket is Ready! 🎉
+            </h2>
+            <p className="font-normal text-[16px] md:text-[18px] md:leading-[24.3px] text-[#5D5151] ">
+              Your ticket has been sent via email and WhatsApp. We’re excited to
+              have you join us!
+            </p>
+          </div>
         </div>
 
         {/* Ticket Section */}
-        <div className="bg-white rounded-lg shadow-lg p-6 flex justify-between items-center">
+        {/* <div className="bg-[#F4F1F299] opacity-[60%]  rounded-lg  p-2.5 md:p-5 lg:p-6 flex justify-between items-center">
+          <div className="bg-white">
           <div className="flex items-center">
-            <img
-              src="/path/to/image.jpg" // Replace with actual image path
-              alt="Event Venue"
-              className="w-32 h-32 rounded-lg object-cover mr-6"
+            <Image
+            src="/ChairSquareRounded.svg"
+            alt="Ticket"
+            width={256}
+            height={225}
             />
             <div>
               <h3 className="text-xl font-bold">Target Edu Expo 2024</h3>
-              <p className="text-gray-600">Venue: International School Riyadh</p>
+              <p className="text-gray-600">
+                Venue: International School Riyadh
+              </p>
               <p className="text-gray-600">Time: International School Riyadh</p>
             </div>
           </div>
@@ -59,6 +67,41 @@ export default function TicketReady() {
                 className="w-16 h-16"
               />
               <p className="text-gray-600 text-center mt-2">Scan for entry</p>
+            </div>
+          </div>
+          </div>
+        </div> */}
+
+        <div className="relative  rounded-lg  p-2.5 md:p-5 lg:p-6 flex justify-between items-center mt-5 md:mt-10 lg:mt-[57px]">
+          <div className="absolute inset-0 bg-[#F4F1F2] opacity-60 rounded-lg pointer-events-none"></div>
+          <div className="bg-white relative p-2.5 md:p-3 rounded-[18px]">
+            <div className="grid  grid-cols-5">
+              <div className="flex items-center col-span-1">
+                <Image
+                  src="/ChairSquareRounded.svg"
+                  alt="Ticket"
+                  width={256}
+                  height={225}
+                />
+              </div>
+              <div className="col-span-3 p-2.5 md:p-5 lg:p-[30px]">
+                <div className="flex flex-col gap-2.5 md:gap-5 lg:gap-6">
+                  <div className="w-full flex justify-between items-center"></div>
+                </div>
+              </div>
+              <div className=" col-span-1 flex justify-end flex-col items-center gap-2.5 md:gap-3">
+                <p className="font-medium text-[14px] leading-[18.9px] text-[#7C7A7A]">
+                  Scan for entry
+                </p>
+                <div className="p-2.5 md:p-5 bg-[#DED6D633] rounded-xl">
+                  <Image
+                    src="/QRCode.svg"
+                    alt="QR Code"
+                    width={141}
+                    height={141}
+                  />{" "}
+                </div>
+              </div>
             </div>
           </div>
         </div>

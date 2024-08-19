@@ -1,3 +1,4 @@
+'ise client'
 import MainLayout from "@/Components/MainLayout/MainLayout";
 import Image from "next/image";
 import React from "react";

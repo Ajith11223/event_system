@@ -179,7 +179,8 @@ const BookingForm = () => {
                     Silver
                   </p>
                   <p className="text-[20px] md:text-[25px]  md:leading-[33.75px] font-bold text-secondary-black">
-                    ₹235
+                    {/* ₹235 */}
+                    Free
                   </p>
                 </div>
                 <button className=" p-2.5 md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white font-semibold rounded-full">

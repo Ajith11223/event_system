@@ -2,10 +2,13 @@ import React from "react";
 import MainBg from "../../../public/TicketGreenBg.svg";
 import Image from "next/image";
 import "./TicketReady.css";
+import { LuDownload } from "react-icons/lu";
+import { HiMiniArrowUturnRight } from "react-icons/hi2";
+import { TbListDetails } from "react-icons/tb";
 
 export default function TicketReady() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#F4E6DA] to-[#F7ECE1]  relative z-0">
+    <div className=" min-h-[1100px] md:min-h-[800px] lg:min-h-[900px] bg-gradient-to-r from-[#F4E6DA] to-[#F7ECE1] relative z-0 ">
       <div
         className="absolute opacity-[60%] top-0 w-full hidden lg:block"
         style={{
@@ -27,7 +30,7 @@ export default function TicketReady() {
             />
           </div>
           <div className="flex flex-col gap-2.5 md:gap-3.5 ">
-            <h2 className="text-[24px] lg:text-[32px] lg:leading-[43.2px] text-HeadingBlack font-bold">
+            <h2 className="text-[24px] lg:text-[32px] leading-[30px] lg:leading-[43.2px] text-HeadingBlack font-bold">
               You’re All Set! Your Ticket is Ready! 🎉
             </h2>
             <p className="font-normal text-[16px] md:text-[18px] md:leading-[24.3px] text-[#5D5151] ">
@@ -37,94 +40,99 @@ export default function TicketReady() {
           </div>
         </div>
 
-
         <div className="relative  rounded-lg  p-2.5 md:p-5 lg:p-6 flex justify-between items-center mt-5 md:mt-10 lg:mt-[57px] mx-2.5 md:mx-5 lg:mx-[50px] xl:mx-[100px]">
           <div className="absolute inset-0 bg-[#F4F1F2] opacity-60 rounded-lg pointer-events-none"></div>
-          <div className="grid  grid-cols-5 bg-white relative divide-x-[2px] divide-dashed  rounded-[18px]"
-          >
-              <div className="flex items-center col-span-1 p-2.5 md:p-3  ">
-                <Image
-                  src="/ChairSquareRounded.svg"
-                  alt="Ticket"
-                  width={256}
-                  height={225}
-                />
-              </div>
-              <div className="col-span-3 p-2.5 md:p-5 lg:p-[30px]  ">
-                <div className="flex flex-col gap-2.5 md:gap-5 lg:gap-6">
-                  <div className="w-full flex justify-between items-center">
-                    <h2 className="text-[20px] md:text-[24px] xl:leading-[32.4px] font-bold text-primary-dark">
-                      Target Edu Expo 2024
-                    </h2>
-                    <p className="font-normal text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
-                      ID; 12345
+          <div className="flex flex-col md:grid md:grid-cols-5 bg-white relative md:divide-x-[2px] divide-dashed  rounded-[18px]">
+            <div className=" justify-center items-center col-span-1 p-2.5 md:p-3  hidden md:flex">
+              <Image
+                src="/ChairSquareRounded.svg"
+                alt="Ticket"
+                width={256}
+                height={225}
+              />
+            </div>
+            <div className="col-span-3 p-2.5 md:p-5 lg:p-[30px]  ">
+              <div className="flex flex-col gap-2.5 md:gap-5 lg:gap-6">
+                <div className="w-full flex-col flex md:flex-row justify-between md:items-center">
+                  <h2 className="text-[20px] md:text-[24px] xl:leading-[32.4px] font-bold text-primary-dark">
+                    Target Edu Expo 2024
+                  </h2>
+                  <p className="font-normal text-[14px] md:text-[16px] md:leading-[21.6px] text-[#7C7A7A]">
+                    ID; 12345
+                  </p>
+                </div>
+                <div className="grid flex-col md:grid-cols-5 gap-2.5 md:gap-5">
+                  <div className="grid md:col-span-3 flex-col gap-0 md:gap-2">
+                    <p className="font-semibold text-[14px] md:text-[16px] md:leading-[21.6px] text-[#7C7A7A]">
+                      venue
                     </p>
+                    <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
+                      International School Riyadh
+                    </h5>
                   </div>
-                  <div className="grid grid-cols-5 gap-2.5 md:gap-5">
-                    <div className="grid col-span-3 flex-col gap-2">
-                      <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
-                        venue
-                      </p>
-                      <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
-                        International School Riyadh
-                      </h5>
-                    </div>
-                    <div className="grid col-span-2 flex-col gap-2">
-                      <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
-                        Date
-                      </p>
-                      <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
-                        13 Sep 2024
-                      </h5>
-                    </div>
-                    <div className="grid col-span-3 flex-col gap-2">
-                      <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
-                        Time
-                      </p>
-                      <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
-                        4:00 pm
-                      </h5>
-                    </div>
-                    <div className="grid col-span-2 flex-col gap-2">
-                      <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
-                        Tickets
-                      </p>
-                      <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
-                        1
-                      </h5>
-                    </div>
+                  <div className="grid md:col-span-2 flex-col gap-0 md:gap-2">
+                    <p className="font-semibold text-[14px] md:text-[16px] md:leading-[21.6px] text-[#7C7A7A]">
+                      Date
+                    </p>
+                    <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
+                      13 Sep 2024
+                    </h5>
+                  </div>
+                  <div className="grid md:col-span-3 flex-col gap-0 md:gap-2">
+                    <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
+                      Time
+                    </p>
+                    <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
+                      4:00 pm
+                    </h5>
+                  </div>
+                  <div className="grid md:col-span-2 flex-col gap-0 md:gap-2">
+                    <p className="font-semibold text-[14px] md:text-[16px] leading-[21.6px] text-[#7C7A7A]">
+                      Tickets
+                    </p>
+                    <h5 className="font-medium text-[14px] md:text-[16px] leading-[21.6px] text-secondary-dark">
+                      1
+                    </h5>
                   </div>
                 </div>
               </div>
-              <div className=" col-span-1 flex justify-end flex-col items-center gap-2.5 md:gap-3 p-2.5 md:p-3">
-                <p className="font-medium text-[14px] leading-[18.9px] text-[#7C7A7A]">
-                  Scan for entry
-                </p>
-                <div className="p-2.5 md:p-5 bg-[#DED6D633] rounded-xl">
-                  <Image
-                    src="/QRCode.svg"
-                    alt="QR Code"
-                    width={141}
-                    height={141}
-                  />{" "}
-                </div>
+            </div>
+            <div className=" col-span-1 flex justify-center flex-col items-center gap-2.5 md:gap-3 p-2.5 md:p-3">
+              <p className="font-medium text-[14px] leading-[18.9px] text-[#7C7A7A]">
+                Scan for entry
+              </p>
+              <div className="p-2.5 md:p-5 bg-[#DED6D633] rounded-xl">
+                <Image
+                  src="/QRCode.svg"
+                  alt="QR Code"
+                  width={141}
+                  height={141}
+                />{" "}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Booking Date and Buttons */}
-        <div className="mt-6 text-center">
-          <p className="text-gray-600 mb-6">
-            Booking Date And Time: Wed, 14 Aug, 2024, 11:10 pm
+        <div className="mt-2.5 md:mt-5 lg:mt-[34px] flex flex-col xl:flex-row gap-2.5 items-center xl:justify-between w-full px-2.5 md:px-5 lg:px-[50px] xl:px-[100px]">
+          <p className="text-[#595659] font-normal text-[14px] md:text-[16px] leading-[21.6px] flex flex-col xl:flex-row md:items-center gap-0.5 md:gap-3.5">
+            Booking Date And Time{" "}
+            <span className="font-medium text-[16px] md:text-[18px] leading-[24.3px] text-primary-dark">
+              {" "}
+              Wed, 14 Aug, 2024, 11:10 pm
+            </span>
           </p>
-          <div className="flex justify-center space-x-4">
-            <button className="bg-orange-500 text-white py-2 px-4 rounded-lg">
-              Download Ticket
+          <div className="flex  flex-col md:flex-row gap-2.5">
+            <button className=" p-2.5 font-normal text-[14px] md:text-[16px] leading-[21.6px] md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white  rounded-full flex gap-2 items-center w-[160px] md:w-fit">
+              <LuDownload className="font-bold"/>
+              Download ticket
             </button>
-            <button className="border border-gray-300 text-gray-600 py-2 px-4 rounded-lg">
+            <button className=" p-2.5  md:p-3 lg:px-5 xl:px-6 bg-white text-black hover:text-white hover:bg-black font-normal text-[14px] md:text-[16px] leading-[21.6px] rounded-full flex gap-2 items-center w-[160px] md:w-fit">
+              <HiMiniArrowUturnRight className="font-bold"/>{" "}
               Resend Ticket
             </button>
-            <button className="border border-gray-300 text-gray-600 py-2 px-4 rounded-lg">
+            <button className=" p-2.5 md:p-3 lg:px-5 xl:px-6 bg-white text-black hover:text-white hover:bg-black font-normal text-[14px] md:text-[16px] leading-[21.6px] rounded-full flex gap-2 items-center w-[160px] md:w-fit">
+              <TbListDetails  className="font-bold"/>{" "}
               Order details
             </button>
           </div>

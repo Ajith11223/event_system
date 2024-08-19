@@ -1,4 +1,4 @@
-'ise client'
+'use client'
 import BookingForm from "@/Components/BookingForm/BookingForm";
 import MainLayout from "@/Components/MainLayout/MainLayout";
 import Image from "next/image";
@@ -13,7 +13,7 @@ const page = () => {
         <Image
           src="/HomeChairs.svg"
           alt="Home"
-          height={386}
+          height={386}  
           width={1240}
           className="w-[100%]  mt-16 xl:mt-[45px]"
         />

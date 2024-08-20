@@ -3,12 +3,13 @@ import BookingForm from "@/Components/BookingForm/BookingForm";
 import TicketReady from "@/Components/BookingForm/TicketReady";
 import MainLayout from "@/Components/MainLayout/MainLayout";
 import Image from "next/image";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ReadMore } from "@/Components/Common/ReadMore/ReadMore";
 import { BsGlobe } from "react-icons/bs";
 import { Carousel } from "rsuite";
 import "../../Components/BookingForm/event.css";
+import { LuDownload } from "react-icons/lu";
 
 const page = () => {
   const router = useRouter();
@@ -25,8 +26,9 @@ const page = () => {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const scrollHeight = window.pageYOffset || document.documentElement.scrollTop;
-          
+          const scrollHeight =
+            window.pageYOffset || document.documentElement.scrollTop;
+
           if (scrollHeight > 410) {
             setIsScrolled(true);
           } else {
@@ -51,10 +53,28 @@ const page = () => {
     };
   }, []);
 
+    const handleDownload = () => {
+        // Create a new link element
+        const link = document.createElement('a');
+
+        // Set the URL of the file to download
+        link.href = '/Target_Edu_Expo_2024_Event_Details.fdf'; // relative path to the file in the public folder
+
+        // Set the download attribute to specify the file name
+        link.download = 'Target_Edu_Expo_2024_Event_Details.fdf';
+
+        // Append the link to the body (necessary for Firefox)
+        document.body.appendChild(link);
+
+        // Programmatically click the link to trigger the download
+        link.click();
+
+        // Remove the link from the document
+        document.body.removeChild(link);
+    };
+
   return (
-    <div
-      className="bg-white h-full relative overflow-hidden bg-gradient-to-b from-white to-orange-50 "
-    >
+    <div className="bg-white h-full relative overflow-hidden bg-gradient-to-b from-white to-orange-50 ">
       <MainLayout>
         {/* <BookingForm/> */}
         {/* <TicketReady/> */}
@@ -141,7 +161,7 @@ const page = () => {
                     className="border-[1px] border-[#E1DCDC] p-2.5 md:p-5 xl:p-8 rounded-lg flex flex-col gap-2.5 md:gap-3.5"
                     style={{ backgroundColor: "rgba(244, 241, 242, 0.6)" }}
                   >
-                    <div className="flex flex-col md:flex-row gap-2.5 md:gap-3.5 items-center justify-center">
+                    <div className="flex flex-col md:flex-row gap-2.5 md:gap-3.5 items-center justify-between">
                       <div className="flex items-start gap-2.5 md:gap-3.5">
                         <div className="bg-[linear-gradient(180deg,_#D9D9D9_-122.29%,_rgba(115,115,115,0)_100%)] rounded-full flex items-center justify-center p-[7px] h-fit w-fit">
                           <Image
@@ -188,30 +208,39 @@ const page = () => {
                           </span>
                         </div>
                         <h5 className="font-bold text-[16px] md:text-[18px] leading-[24.3px] text-primary-dark">
-                          Agenda Title
+                          Shaping the Future of Tomorrow’s Leaders
                         </h5>
                         <span className="font-normal text-[16px] md:text-[18px] leading-[24.3px] text-secondary-dark">
                           <ReadMore maxCharacterCount={150}>
-                            ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nunc vulputate libero et velit interdum, ac aliquet
-                            odio mattis. Class aptent ta See moreipsum dolor sit
-                            amet, consectetur adipiscing elit. Nunc vulputate
-                            libero et velit interdum, ac aliquet odio mattis.
-                            Class aptent ta
+                            Unlock Your Child’s Potential!! Join us for a
+                            groundbreaking event designed to empower parents and
+                            students with insights into the rapidly evolving
+                            career and job market. The Target Edu Expo 2024 is
+                            your gateway to understanding the future of
+                            education, technology, and employment trends.
                           </ReadMore>
                         </span>
-                        <div className="flex flex-wrap">
-                          <div className="bg-white px-2 py-1 flex gap-2 items-center justify-center rounded-full">
-                            <Image
-                              src="/DummyGirl.svg"
-                              alt="Profile img"
-                              height={18}
-                              width={18}
-                            />
-                            <p className="text-[16px] md:text-[18px] leading-[24.3px] text-secondary-black">
-                              Josh
-                            </p>
+
+                        <div className="flex justify-between">
+                          <div className="flex flex-wrap">
+                            <div className="bg-white px-2 py-1 flex gap-2 items-center justify-center rounded-full">
+                              <Image
+                                src="/DummyGirl.svg"
+                                alt="Profile img"
+                                height={18}
+                                width={18}
+                              />
+                              <p className="text-[16px] md:text-[18px] leading-[24.3px] text-secondary-black">
+                                Josh
+                              </p>
+                            </div>
                           </div>
+                          <button
+                          //  onClick={handleDownload} 
+                           className="transform transition-all duration-200 p-2.5 font-normal text-[14px] md:text-[16px] leading-[21.6px] md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white  rounded-full flex gap-2 items-center w-[160px] md:w-fit">
+                            <LuDownload className="font-bold" />
+                            Download
+                          </button>
                         </div>
                       </div>{" "}
                       <div className=" bg-[linear-gradient(180deg,_rgba(218,237,255,0.4)_-0.05%,_rgba(153,131,138,0.4)_393.97%)] p-2.5 md:p-5 xl:p-6 flex flex-col gap-2.5 md:gap-3.5 rounded-[14px]">

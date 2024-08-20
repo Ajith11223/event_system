@@ -3,7 +3,7 @@ import BookingForm from "@/Components/BookingForm/BookingForm";
 import TicketReady from "@/Components/BookingForm/TicketReady";
 import MainLayout from "@/Components/MainLayout/MainLayout";
 import Image from "next/image";
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ReadMore } from "@/Components/Common/ReadMore/ReadMore";
 import { BsGlobe } from "react-icons/bs";
@@ -17,8 +17,44 @@ const page = () => {
     router.push("/event/123");
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollHeight = window.pageYOffset || document.documentElement.scrollTop;
+          
+          if (scrollHeight > 410) {
+            setIsScrolled(true);
+          } else {
+            setIsScrolled(false);
+          }
+
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    };
+
+    handleScroll(); // Initial check
+
+    // Set up a recurring check for scroll position
+    const intervalId = setInterval(handleScroll, 100);
+
+    // Clean up on component unmount
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
   return (
-    <div className="bg-white h-full relative overflow-hidden bg-gradient-to-b from-white to-orange-50 ">
+    <div
+      className="bg-white h-full relative overflow-hidden bg-gradient-to-b from-white to-orange-50 "
+    >
       <MainLayout>
         {/* <BookingForm/> */}
         {/* <TicketReady/> */}
@@ -67,7 +103,11 @@ const page = () => {
             </Carousel>
           </div>
 
-          <div className="xl:grid xl:grid-cols-7 gap-2.5 md:gap-5 xl:gap-[84px] mb-20 ">
+          <div
+            className={`xl:grid xl:grid-cols-7  gap-2.5 md:gap-5 xl:gap-[84px] mb-20 ${
+              isScrolled ? "xl:relative" : ""
+            } `}
+          >
             <div className="xl:pb-10 col-span-5">
               <div>
                 <h2 className="text-[32px] md:text-[48px] xl:leading-[64.8px] font-bold text-primary-dark">
@@ -266,7 +306,7 @@ const page = () => {
                           123
                         </p>
                       </div>
-                      <button className="bg-primary-btnblack hover:text-primary-btnblack hover:border-[1px] border-primary-btnblack   p-2.5 md:p-3 w-full md:w-[288px] text-[14px] md:text-[16px] flex items-center leading-[21.6px] font-normal text-white h-fit gap-2 rounded-full justify-center hover:bg-white">
+                      <button className="bg-black hover:text-black hover:border-[1px] border-black   p-2.5 md:p-3 w-full md:w-[288px] text-[14px] md:text-[16px] flex items-center leading-[21.6px] font-normal text-white h-fit gap-2 rounded-full justify-center hover:bg-white transform transition-all duration-200">
                         <BsGlobe className="text-[20px]" />
                         <span> Visit Website</span>
                       </button>
@@ -275,7 +315,11 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className="relative col-span-2 ">
+            <div
+              className={` col-span-2 transition-all transform duration-500 min-w-[20%] ${
+                isScrolled ? "xl:fixed xl:top-32 right-[100px]" : ""
+              } `}
+            >
               <div className="">
                 <div
                   id="sticky-div"
@@ -317,13 +361,13 @@ const page = () => {
                       </p>
                       <button
                         onClick={handleClick}
-                        className=" p-2.5 md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white font-semibold rounded-full"
+                        className=" p-2.5 md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white font-semibold rounded-full transform transition-all duration-200"
                       >
                         Book Now
                       </button>
                     </div>
                   </div>
-                  <button className="bg-primary-btnblack hidden  hover:text-primary-btnblack hover:border-[1px] border-primary-btnblack   p-2.5 md:p-3 w-full  text-[14px] md:text-[16px] xl:flex items-center leading-[21.6px] font-normal text-white h-fit gap-2 rounded-full justify-center hover:bg-white">
+                  <button className="bg-black hidden  hover:text-black hover:border-[1px] border-black   p-2.5 md:p-3 w-full  text-[14px] md:text-[16px] xl:flex items-center leading-[21.6px] font-normal text-white h-fit gap-2 rounded-full justify-center hover:bg-white transform transition-all duration-200">
                     <BsGlobe className="text-[20px]" />
                     <span> Visit Website</span>
                   </button>

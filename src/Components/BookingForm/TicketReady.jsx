@@ -116,14 +116,14 @@ export default function TicketReady({id}) {
             </span>
           </p>
           <div className="flex  flex-col md:flex-row gap-2.5  ">
-            <button className=" p-2.5 font-normal text-[14px] md:text-[16px] leading-[21.6px] md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white  rounded-full flex gap-2 items-center w-[160px] md:w-fit">
+            <button className="transform transition-all duration-200 p-2.5 font-normal text-[14px] md:text-[16px] leading-[21.6px] md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white  rounded-full flex gap-2 items-center w-[160px] md:w-fit">
               <LuDownload className="font-bold" />
               Download ticket
             </button>
-            <button className=" p-2.5  md:p-3 lg:px-5 xl:px-6 bg-white text-black hover:text-white hover:bg-black font-normal text-[14px] md:text-[16px] leading-[21.6px] rounded-full flex gap-2 items-center w-[160px] md:w-fit">
+            <button className="transform transition-all duration-200 p-2.5  md:p-3 lg:px-5 xl:px-6 bg-white text-black hover:text-white hover:bg-black font-normal text-[14px] md:text-[16px] leading-[21.6px] rounded-full flex gap-2 items-center w-[160px] md:w-fit">
               <HiMiniArrowUturnRight className="font-bold" /> Resend Ticket
             </button>
-            <button className=" p-2.5 md:p-3 lg:px-5 xl:px-6 bg-white text-black hover:text-white hover:bg-black font-normal text-[14px] md:text-[16px] leading-[21.6px] rounded-full flex gap-2 items-center w-[160px] md:w-fit">
+            <button className="transform transition-all duration-200 p-2.5 md:p-3 lg:px-5 xl:px-6 bg-white text-black hover:text-white hover:bg-black font-normal text-[14px] md:text-[16px] leading-[21.6px] rounded-full flex gap-2 items-center w-[160px] md:w-fit">
               <TbListDetails className="font-bold" /> Order details
             </button>
           </div>

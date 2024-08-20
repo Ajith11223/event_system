@@ -2,9 +2,37 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/Components/Header/Header";
 import 'rsuite/dist/rsuite-no-reset.min.css';
+import localFont from 'next/font/local';
+
 
 
 const inter = Inter({ subsets: ["latin"] });
+
+const satoshi = localFont({
+  src: [
+    {
+      path: '../../public/satoshi/Satoshi-Light.woff',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../../public/satoshi/Satoshi-Regular.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/satoshi/Satoshi-Medium.woff',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/satoshi/Satoshi-Bold.woff',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-satoshi',
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +42,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={satoshi.variable}>{children}</body>
     </html>
   );
 }

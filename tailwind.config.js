@@ -18,7 +18,8 @@ module.exports = {
           dark: '#333233',
           heading:"#121012",
           bgDark:"#1E1E1E",
-          Placeholder:"#B48F8F"
+          Placeholder:"#B48F8F",
+          btnblack:"#1F1D1A"
         },
         secondary:{
           dark: '#595659',

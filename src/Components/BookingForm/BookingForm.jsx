@@ -76,37 +76,35 @@ const BookingForm = () => {
   });
 
   const handleSubmit = async (values) => {
-    router.push(`/ticket/${"66c4a84ccee846a7da63e189"}`);
-    
-    // const controller = new AbortController();
-    // const timeoutId = setTimeout(() => controller.abort(), 15000); // 5 seconds timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000); // 5 seconds timeout
 
-    // try {
-    //   const response = await fetch("/api/submit-form", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(values),
-    //     signal: controller.signal,
-    //   });
+    try {
+      const response = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+        signal: controller.signal,
+      });
 
-    //   clearTimeout(timeoutId); // Clear the timeout if the request completes in time
+      clearTimeout(timeoutId); // Clear the timeout if the request completes in time
 
-    //   const data = await response.json();
-    //   if (response.ok) {
-    //     router.push(`/ticket/${data?.data?._id}`);
-    //     console.log(data); // "Form submission successful!"
-    //   } else {
-    //     console.error("Error:", data.message);
-    //   }
-    // } catch (error) {
-    //   if (error.name === "AbortError") {
-    //     console.error("Request timed out");
-    //   } else {
-    //     console.error("An error occurred:", error);
-    //   }
-    // }
+      const data = await response.json();
+      if (response.ok) {
+        router.push(`/ticket/${data?.data?._id}`);
+        console.log(data); // "Form submission successful!"
+      } else {
+        console.error("Error:", data.message);
+      }
+    } catch (error) {
+      if (error.name === "AbortError") {
+        console.error("Request timed out");
+      } else {
+        console.error("An error occurred:", error);
+      }
+    }
   };
   return (
     <div className="  px-2.5 md:px-5 lg:px-[50px] xl:px-[100px] pb-5 md:pb-10 lg:pb-[50px] xl:pb-[100px]">

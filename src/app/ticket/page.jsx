@@ -1,8 +1,8 @@
 'use client'
-import TicketReady from "@/Components/BookingForm/TicketReady";
 import MainLayout from "@/Components/MainLayout/MainLayout";
 import React from "react";
 import MainBg from "../../../public/TicketGreenBg.svg";
+import TicketReady from "@/Components/BookingForm/TicketReady";
 
 const page = () => {
   return (

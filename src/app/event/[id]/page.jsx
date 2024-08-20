@@ -7,7 +7,7 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <div className="bg-white h-screen  relative  bg-gradient-to-b from-white to-orange-50 ">
+      <div className="  bg-[linear-gradient(90deg,#F6EEEE_6.18%,#EDD8BD_104.58%)] absolute  w-full min-h-screen top-0">
         <MainLayout>
           <BookingForm />
         </MainLayout>

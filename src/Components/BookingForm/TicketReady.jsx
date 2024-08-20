@@ -45,10 +45,10 @@ export default function TicketReady({id}) {
             </div>
             <div className="col-span-3 p-2.5 md:p-5 lg:p-[30px]  ">
               <div className="flex flex-col gap-2.5 md:gap-5 lg:gap-6">
-                <div className="w-full flex-col flex md:flex-row justify-between md:items-center">
+                <div style={{display:"flex",flexDirection:"column"}} className="w-full flex-col flex md:flex-row justify-between md:items-center">
                   <h2 className="text-[20px] md:text-[24px] xl:leading-[32.4px] font-bold text-primary-dark">
                     Target Edu Expo 2024
-                  </h2>
+                  </h2> <br />
                   <p className="font-normal text-[14px] md:text-[16px] md:leading-[21.6px] text-[#7C7A7A]">
                     ID; {id}
                   </p>

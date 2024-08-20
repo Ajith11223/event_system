@@ -1,33 +1,39 @@
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './app/**/*.{js,ts,jsx,tsx,mdx}', // Note the addition of the `app` directory.
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+ 
+    // Or if using `src` directory:
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
-        primary: {
-          dark: '#333233',
-          heading:"#121012",
-          bgDark:"#1E1E1E",
-          Placeholder:"#B48F8F",
-          btnblack:"#1F1D1A"
-        },
-        secondary:{
-          dark: '#595659',
-          black:"#1F1F1F"
-        },
-        HeadingBlack:"#060707"
-      }
+        B2:"#85969F",
+        B3: '#C8CDD9',
+        b11:"#1D2D39",
+        B4:"#DCE5EE",
+        B5:"#F7F2F2",
+        neutral800:"#170F49",
+        PrimaryGreen:"#00D299",
+        ancientGreen:"#00DFB6",
+        black11:"#375268",
+        BFB:"#BFB6B6",
+        SecondaryBlue:"#009AFF",
+        DeleteRed:"#DE2D2D",
+        CloseBlue:"#1C274C",
+        PrimaryBlue:"#0054FF",
+        EOrange:"#FF5823",
+        LightGreen:"#C9FFF5",
+        LightBrown:"#322A2A",
+        DentoRed:"#FF3434",
+        OptionBlack:"#090202",
+        CaribbeanGreen:"#A0FAD6"
+      },
     },
   },
+  
   plugins: [],
-};
+}

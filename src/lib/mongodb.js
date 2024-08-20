@@ -1,34 +1,26 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const MONGODB_URI = 'mongodb+srv://ajithm12aji:aGWLtv0xuNuSpAka@eventdb.us6k5.mongodb.net/?retryWrites=true&w=majority&appName=eventDB'
+const MONGODB_URI =
+  "mongodb+srv://ajithm12aji:aGWLtv0xuNuSpAka@eventdb.us6k5.mongodb.net/?retryWrites=true&w=majority&appName=eventDB";
 
-if (!MONGODB_URI) {
-  throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
-}
+let isConnected;
 
-let cached = global.mongoose;
+export default async function connectToDatabase() {
+  // if (isConnected) {
+  //   return;
+  // }
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
+  // const db = await mongoose.connect(MONGODB_URI, {
+  //   useNewUrlParser: true,
+  //   useUnifiedTopology: true,
+  // });
 
-async function connectToDatabase() {
-  if (cached.conn) {
-    return cached.conn;
+  // isConnected = db.connections[0].readyState;
+  if (mongoose.connection.readyState === 1) {
+    return mongoose.connection.asPromise();
+  } else {
+    const url = MONGODB_URI;
+
+    mongoose.connect(url);
   }
-
-  if (!cached.promise) {
-    const opts = {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    };
-
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      return mongoose;
-    });
-  }
-  cached.conn = await cached.promise;
-  return cached.conn;
 }
-
-export default connectToDatabase;

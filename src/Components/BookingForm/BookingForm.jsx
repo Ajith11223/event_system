@@ -76,6 +76,9 @@ const BookingForm = () => {
   });
 
   const handleSubmit = async (values) => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000); // 5 seconds timeout
+
     try {
       const response = await fetch("/api/submit-form", {
         method: "POST",
@@ -83,17 +86,24 @@ const BookingForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(values),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId); // Clear the timeout if the request completes in time
 
       const data = await response.json();
       if (response.ok) {
-        router.push("/ticket/?ticket=" + data?.data?._id);
+        router.push(`/ticket/${data?.data?._id}`);
         console.log(data); // "Form submission successful!"
       } else {
         console.error("Error:", data.message);
       }
     } catch (error) {
-      console.error("An error occurred:", error);
+      if (error.name === "AbortError") {
+        console.error("Request timed out");
+      } else {
+        console.error("An error occurred:", error);
+      }
     }
   };
   return (

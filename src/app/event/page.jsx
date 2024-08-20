@@ -273,7 +273,7 @@ const page = () => {
               </div>
             </div>
             <div className="relative col-span-2 ">
-              <div className="sticky-wrapper min-h-screen">
+              <div className="">
                 <div
                   id="sticky-div"
                   className="flex flex-col gap-2.5 md:gap-3.5 lg:gap-[34px] sticky-content "
@@ -320,7 +320,7 @@ const page = () => {
                       </button>
                     </div>
                   </div>
-                  <button className="bg-primary-btnblack hover:text-primary-btnblack hover:border-[1px] border-primary-btnblack   p-2.5 md:p-3 w-full  text-[14px] md:text-[16px] flex items-center leading-[21.6px] font-normal text-white h-fit gap-2 rounded-full justify-center hover:bg-white">
+                  <button className="bg-primary-btnblack hidden  hover:text-primary-btnblack hover:border-[1px] border-primary-btnblack   p-2.5 md:p-3 w-full  text-[14px] md:text-[16px] xl:flex items-center leading-[21.6px] font-normal text-white h-fit gap-2 rounded-full justify-center hover:bg-white">
                     <BsGlobe className="text-[20px]" />
                     <span> Visit Website</span>
                   </button>

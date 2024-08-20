@@ -5,14 +5,10 @@ import "./TicketReady.css";
 import { LuDownload } from "react-icons/lu";
 import { HiMiniArrowUturnRight } from "react-icons/hi2";
 import { TbListDetails } from "react-icons/tb";
-import { useSearchParams } from "next/navigation";
 import QRCode from "react-qr-code";
 
-export default function TicketReady() {
-  const searchParams = useSearchParams();
+export default function TicketReady({id}) {
 
-  const id = searchParams.get("ticket");
-  console.log(id);
   return (
     <div className=" relative ">
       <div className="  flex flex-col mt-20 items-center w-full">

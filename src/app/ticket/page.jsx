@@ -1,6 +1,6 @@
 'use client'
-import MainLayout from "@/Components/MainLayout/MainLayout";
 import React from "react";
+import MainLayout from "@/Components/MainLayout/MainLayout";
 import MainBg from "../../../public/TicketGreenBg.svg";
 import TicketReady from "@/Components/BookingForm/TicketReady";
 

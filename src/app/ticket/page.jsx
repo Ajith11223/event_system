@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import TicketReady from "@/Components/BookingForm/TicketReady";
 import MainLayout from "@/Components/MainLayout/MainLayout";
 import React from "react";

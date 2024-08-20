@@ -250,7 +250,7 @@ const BookingForm = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#F4F1F299] xl:col-span-5 p-2.5 md:p-3.5 rounded-[14px]">
                   <div className="flex flex-col gap-2.5 md:gap-3.5">
                     <label className="text-[14px] md:text-[16px] leading-[21.6px] font-medium text-secondary-dark">
-                      Name
+                      Name <span className="text-red-500 text-sm">*</span>
                     </label>
                     <Field
                       name="name"
@@ -267,7 +267,7 @@ const BookingForm = () => {
 
                   <div className="flex flex-col gap-2.5 md:gap-3.5 h-full">
                     <label className="text-[14px] md:text-[16px] leading-[21.6px] font-medium text-secondary-dark">
-                      Gender
+                      Gender <span className="text-red-500 text-sm">*</span>
                     </label>
                     <SelectPicker
                       data={genderData}
@@ -285,7 +285,7 @@ const BookingForm = () => {
 
                   <div className="flex flex-col gap-2.5 md:gap-3.5">
                     <label className="text-[14px] md:text-[16px] leading-[21.6px] font-medium text-secondary-dark">
-                      Date of Birth (DOB)
+                      Date of Birth (DOB) <span className="text-red-500 text-sm">*</span>
                     </label>
                     <Field
                       name="dob"
@@ -301,7 +301,7 @@ const BookingForm = () => {
 
                   <div className="flex flex-col gap-2.5 md:gap-3.5">
                     <label className="text-[14px] md:text-[16px] leading-[21.6px] font-medium text-secondary-dark">
-                      Mobile Number
+                      Mobile Number <span className="text-red-500 text-sm">*</span>
                     </label>
                     <Field
                       name="mobileNumber"
@@ -318,7 +318,7 @@ const BookingForm = () => {
 
                   <div className="flex flex-col gap-2.5 md:gap-3.5">
                     <label className="text-[14px] md:text-[16px] leading-[21.6px] font-medium text-secondary-dark">
-                      WhatsApp Number
+                      WhatsApp Number <span className="text-red-500 text-sm">*</span>
                     </label>
                     <Field
                       name="whatsappNumber"
@@ -335,7 +335,7 @@ const BookingForm = () => {
 
                   <div className="flex flex-col gap-2.5 md:gap-3.5">
                     <label className="text-[14px] md:text-[16px] leading-[21.6px] font-medium text-secondary-dark">
-                      Email Address
+                      Email Address <span className="text-red-500 text-sm">*</span>
                     </label>
                     <Field
                       name="email"
@@ -352,7 +352,7 @@ const BookingForm = () => {
 
                   <div className="flex flex-col gap-2.5 md:gap-3.5">
                     <label className="text-[14px] md:text-[16px] leading-[21.6px] font-medium text-secondary-dark">
-                      Occupation
+                      Occupation <span className="text-red-500 text-sm">*</span>
                     </label>
                     <SelectPicker
                       data={occupationData}
@@ -370,7 +370,7 @@ const BookingForm = () => {
 
                   <div className="flex flex-col gap-2.5 md:gap-3.5">
                     <label className="text-[14px] md:text-[16px] leading-[21.6px] font-medium text-secondary-dark">
-                      School
+                      School <span className="text-red-500 text-sm">*</span>
                     </label>
                     <SelectPicker
                       data={schoolData}
@@ -388,7 +388,7 @@ const BookingForm = () => {
 
                   <div className="md:col-span-2 flex flex-col gap-2.5 md:gap-3.5">
                     <label className="text-[14px] md:text-[16px] leading-[21.6px] font-medium text-secondary-dark">
-                      Confirmation of Attendance
+                      Confirmation of Attendance <span className="text-red-500 text-sm">*</span>
                     </label>
                     <div className="flex items-start gap-2.5 md:gap-3.5">
                       <Field

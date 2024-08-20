@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { ReadMore } from "@/Components/Common/ReadMore/ReadMore";
 import { BsGlobe } from "react-icons/bs";
 import { Carousel } from "rsuite";
-import "../../Components/BookingForm/event.css"
+import "../../Components/BookingForm/event.css";
 
 const page = () => {
   const router = useRouter();
@@ -24,46 +24,49 @@ const page = () => {
         {/* <TicketReady/> */}
         <div className=" mx-2.5 md:mx-5 lg:mx-[50px] xl:mx-[100px] pt-10 flex flex-col gap-2.5 md:gap-5 lg:gap-10 xl:gap-[45px]">
           <div className="flex flex-col ">
-          <Carousel autoplay className="h-fit w-full  mt-12 lg:mt-20 xl:mt-24 custom-slider" shape="bar">
-           
-            <Image
-            src="/HomeChairs.svg"
-            alt="Home"
-            height={386}
-            width={1240}
-            className="w-full "
-          />
-           <Image
-            src="/HomeChairs.svg"
-            alt="Home"
-            height={386}
-            width={1240}
-            className="w-full "
-          />
-           <Image
-            src="/HomeChairs.svg"
-            alt="Home"
-            height={386}
-            width={1240}
-            className="w-full "
-          />
-           <Image
-            src="/HomeChairs.svg"
-            alt="Home"
-            height={386}
-            width={1240}
-            className="w-full "
-          />
-           <Image
-            src="/HomeChairs.svg"
-            alt="Home"
-            height={386}
-            width={1240}
-            className="w-full "
-          />
-          </Carousel>
+            <Carousel
+              autoplay
+              className="h-fit w-full  mt-12 lg:mt-20 xl:mt-24 custom-slider"
+              shape="bar"
+            >
+              <Image
+                src="/HomeChairs.svg"
+                alt="Home"
+                height={386}
+                width={1240}
+                className="w-full "
+              />
+              <Image
+                src="/HomeChairs.svg"
+                alt="Home"
+                height={386}
+                width={1240}
+                className="w-full "
+              />
+              <Image
+                src="/HomeChairs.svg"
+                alt="Home"
+                height={386}
+                width={1240}
+                className="w-full "
+              />
+              <Image
+                src="/HomeChairs.svg"
+                alt="Home"
+                height={386}
+                width={1240}
+                className="w-full "
+              />
+              <Image
+                src="/HomeChairs.svg"
+                alt="Home"
+                height={386}
+                width={1240}
+                className="w-full "
+              />
+            </Carousel>
           </div>
-          
+
           <div className="xl:grid xl:grid-cols-7 gap-2.5 md:gap-5 xl:gap-[84px] mb-20 ">
             <div className="xl:pb-10 col-span-5">
               <div>

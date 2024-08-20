@@ -87,7 +87,7 @@ const BookingForm = () => {
 
       const data = await response.json();
       if (response.ok) {
-        router.push("/ticket/?ticket=" + data?.data?._id);
+        router.push(`/ticket/${data?.data?._id}`);
         console.log(data); // "Form submission successful!"
       } else {
         console.error("Error:", data.message);

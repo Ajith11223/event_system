@@ -77,7 +77,7 @@ const BookingForm = () => {
 
   const handleSubmit = async (values) => {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 seconds timeout
+    const timeoutId = setTimeout(() => controller.abort(), 15000); // 5 seconds timeout
 
     try {
       const response = await fetch("/api/submit-form", {

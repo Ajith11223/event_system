@@ -1,0 +1,13 @@
+.rs-carousel{
+    height: fit-content;
+    border-radius: 14px;
+}
+.rs-carousel-placement-bottom .rs-carousel-toolbar {
+    bottom: 5px;
+}
+/* #indicator__nj4yei0y9r_3,#indicator__nj4yei0y9r_2,#indicator__nj4yei0y9r_1,#indicator__nj4yei0y9r_4,#indicator__nj4yei0y9r_5{
+    background-color: #DD720D;
+}
+.custom-slider .rs-carousel-label-wrapper.rs-carousel-label-active {
+  background-color: #DD720D;
+} */

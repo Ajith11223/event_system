@@ -4,9 +4,14 @@ import TicketReady from "@/Components/BookingForm/TicketReady";
 import MainLayout from "@/Components/MainLayout/MainLayout";
 import Image from "next/image";
 import React from "react";
-
+import { useRouter } from 'next/navigation';
 
 const page = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/event/123');
+  };
   
   return (
     <div className="bg-white h-full relative overflow-hidden bg-gradient-to-b from-white to-orange-50 ">
@@ -21,7 +26,7 @@ const page = () => {
           className="w-[100%]  mt-16 xl:mt-[45px]"
         />
         <div className=" mx-2.5 md:mx-5 lg:mx-[50px] xl:mx-[100px]">
-          <div className="xl:grid xl:grid-cols-7 gap-2.5 md:gap-5 xl:gap-[84px]">
+          <div className="xl:grid xl:grid-cols-7 gap-2.5 md:gap-5 xl:gap-[84px] mb-20">
             <div className="xl:pb-10 col-span-5">
               <div>
                 <h2 className="text-[32px] md:text-[48px] xl:leading-[64.8px] font-bold text-primary-dark">
@@ -152,7 +157,7 @@ const page = () => {
                   <p className="text-[24px] md:text-[32px] leading-[43.2px] font-bold text-secondary-black">
                     ₹235
                   </p>
-                  <button className=" p-2.5 md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white font-semibold rounded-full">
+                  <button onClick={handleClick} className=" p-2.5 md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white font-semibold rounded-full">
                     Book Now
                   </button>
                 </div>

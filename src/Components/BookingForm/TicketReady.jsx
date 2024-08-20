@@ -1,32 +1,21 @@
-'use client'
+"use client";
 import React from "react";
-import MainBg from "../../../public/TicketGreenBg.svg";
 import Image from "next/image";
 import "./TicketReady.css";
 import { LuDownload } from "react-icons/lu";
 import { HiMiniArrowUturnRight } from "react-icons/hi2";
 import { TbListDetails } from "react-icons/tb";
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from "next/navigation";
 import QRCode from "react-qr-code";
 
 export default function TicketReady() {
   const searchParams = useSearchParams();
 
-  const id = searchParams.get('ticket');
-  console.log(id)
+  const id = searchParams.get("ticket");
+  console.log(id);
   return (
-    <div className=" min-h-[1100px] md:min-h-[800px] lg:min-h-[900px] bg-gradient-to-r from-[#F4E6DA] to-[#F7ECE1] relative z-0 ">
-      <div
-        className="absolute opacity-[60%] top-0 w-full hidden lg:block"
-        style={{
-          paddingBottom: `${(455 / 1440) * 100}%`, // Aspect ratio (262px height for 1443px width)
-          backgroundImage: `url(${MainBg.src})`,
-          backgroundPosition: "top ",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      ></div>
-      <div className=" absolute flex flex-col mt-20 items-center w-full">
+    <div className=" relative ">
+      <div className="  flex flex-col mt-20 items-center w-full">
         <div className="text-center flex flex-col gap-2.5 md:gap-5 lg:gap-6  mt-5 md:mt-10 lg:mt-20">
           <div className="flex justify-center items-center ">
             <Image
@@ -108,21 +97,21 @@ export default function TicketReady() {
               <p className="font-medium text-[14px] leading-[18.9px] text-[#7C7A7A]">
                 Scan for entry
               </p>
-              <div className="p-2.5 md:p-5 bg-[#DED6D633] rounded-xl">
+              <div className="p-2.5 md:p-5 bg-[#DED6D633] rounded-xl max-w-[200px]">
                 {/* <Image
                   src="/QRCode.svg"
                   alt="QR Code"
                   width={141}
                   height={141}
                 />{" "} */}
-                <QRCode value={id} />
+                <QRCode value={id} className="w-full h-full"/>
               </div>
             </div>
           </div>
         </div>
 
         {/* Booking Date and Buttons */}
-        <div className="mt-2.5 md:mt-5 lg:mt-[34px] flex flex-col xl:flex-row gap-2.5 items-center xl:justify-between w-full px-2.5 md:px-5 lg:px-[50px] xl:px-[100px]">
+        <div className="mt-2.5 md:mt-5 lg:mt-[34px] flex flex-col xl:flex-row gap-2.5 items-center xl:justify-between w-full px-2.5 md:px-5 lg:px-[50px] xl:px-[100px] mb-20">
           <p className="text-[#595659] font-normal text-[14px] md:text-[16px] leading-[21.6px] flex flex-col xl:flex-row md:items-center gap-0.5 md:gap-3.5">
             Booking Date And Time{" "}
             <span className="font-medium text-[16px] md:text-[18px] leading-[24.3px] text-primary-dark">
@@ -130,18 +119,16 @@ export default function TicketReady() {
               Wed, 14 Aug, 2024, 11:10 pm
             </span>
           </p>
-          <div className="flex  flex-col md:flex-row gap-2.5">
+          <div className="flex  flex-col md:flex-row gap-2.5  ">
             <button className=" p-2.5 font-normal text-[14px] md:text-[16px] leading-[21.6px] md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white  rounded-full flex gap-2 items-center w-[160px] md:w-fit">
-              <LuDownload className="font-bold"/>
+              <LuDownload className="font-bold" />
               Download ticket
             </button>
             <button className=" p-2.5  md:p-3 lg:px-5 xl:px-6 bg-white text-black hover:text-white hover:bg-black font-normal text-[14px] md:text-[16px] leading-[21.6px] rounded-full flex gap-2 items-center w-[160px] md:w-fit">
-              <HiMiniArrowUturnRight className="font-bold"/>{" "}
-              Resend Ticket
+              <HiMiniArrowUturnRight className="font-bold" /> Resend Ticket
             </button>
             <button className=" p-2.5 md:p-3 lg:px-5 xl:px-6 bg-white text-black hover:text-white hover:bg-black font-normal text-[14px] md:text-[16px] leading-[21.6px] rounded-full flex gap-2 items-center w-[160px] md:w-fit">
-              <TbListDetails  className="font-bold"/>{" "}
-              Order details
+              <TbListDetails className="font-bold" /> Order details
             </button>
           </div>
         </div>

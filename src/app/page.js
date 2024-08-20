@@ -1,3 +1,4 @@
+'use client'
 import Sidebar from "@/Components/Sidebar/Sidebar";
 import Image from "next/image";
 

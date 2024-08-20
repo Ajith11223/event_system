@@ -58,10 +58,10 @@ const page = () => {
         const link = document.createElement('a');
 
         // Set the URL of the file to download
-        link.href = '/Target_Edu_Expo_2024_Event_Details.fdf'; // relative path to the file in the public folder
+        link.href = '/Target_Edu_Expo_2024_Event_Details.pdf'; // relative path to the file in the public folder
 
         // Set the download attribute to specify the file name
-        link.download = 'Target_Edu_Expo_2024_Event_Details.fdf';
+        link.download = 'Target_Edu_Expo_2024_Event_Details.pdf';
 
         // Append the link to the body (necessary for Firefox)
         document.body.appendChild(link);
@@ -235,9 +235,7 @@ const page = () => {
                               </p>
                             </div>
                           </div>
-                          <button
-                          //  onClick={handleDownload} 
-                           className="transform transition-all duration-200 p-2.5 font-normal text-[14px] md:text-[16px] leading-[21.6px] md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white  rounded-full flex gap-2 items-center w-[160px] md:w-fit">
+                          <button onClick={handleDownload} className="transform transition-all duration-200 p-2.5 font-normal text-[14px] md:text-[16px] leading-[21.6px] md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white  rounded-full flex gap-2 items-center w-[160px] md:w-fit">
                             <LuDownload className="font-bold" />
                             Download
                           </button>

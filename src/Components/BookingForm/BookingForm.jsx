@@ -108,7 +108,7 @@ const BookingForm = () => {
   };
   return (
     <div className="  px-2.5 md:px-5 lg:px-[50px] xl:px-[100px] pb-5 md:pb-10 lg:pb-[50px] xl:pb-[100px]">
-      <div className="mt-[76px] md:mt-[86px] lg:mt-[112px] xl:mt-[122px] ">
+      <div className="mt-[80px] md:mt-[95px] lg:mt-[120px] xl:mt-[128px] ">
         <div className="bg-primary-dark text-white p-2.5 md:p-5 xl:p-6 rounded-[14px] flex justify-between items-center w-full">
           <div className="text-[16px] md:text-[18px] md:leading-[24.3px] font-bold">
             Target edu expo
@@ -266,7 +266,7 @@ const BookingForm = () => {
                       name="name"
                       type="text"
                       placeholder="Enter your full name."
-                      className="h-full p-2 md:px-3 md:py-3.5 rounded-lg w-full focus:outline-none placeholder:text-primary-Placeholder placeholder:text-[14px] placeholder:leading-[18.9px] placeholder:font-normal"
+                      className="h-full p-2 md:px-3 md:py-3.5 rounded-lg w-full focus:outline-none placeholder:text-primary-Placeholder placeholder:text-[14px] placeholder:leading-[18.9px] placeholder:font-normal max-h-[48px]"
                     />
                     <ErrorMessage
                       name="name"
@@ -284,7 +284,7 @@ const BookingForm = () => {
                       onChange={(value) => setFieldValue("gender", value)}
                       placeholder="Select your gender"
                       searchable={false}
-                      className="border-none h-full md:h-[48px] z-0"
+                      className="border-none h-full md:h-[48px] z-0 max-h-[48px]"
                     />
                     {touched.gender && errors.gender && (
                       <div className="text-red-500 text-sm -mt-2.5">
@@ -317,7 +317,7 @@ const BookingForm = () => {
                       name="mobileNumber"
                       type="text"
                       placeholder="Enter your active mobile number"
-                      className="h-full p-2 md:px-3 md:py-3.5 rounded-lg w-full focus:outline-none placeholder:text-primary-Placeholder placeholder:text-[14px] placeholder:leading-[18.9px] placeholder:font-normal"
+                      className="h-full p-2 md:px-3 md:py-3.5 rounded-lg w-full focus:outline-none placeholder:text-primary-Placeholder placeholder:text-[14px] placeholder:leading-[18.9px] placeholder:font-normal max-h-[48px]"
                     />
                     <ErrorMessage
                       name="mobileNumber"
@@ -334,7 +334,7 @@ const BookingForm = () => {
                       name="whatsappNumber"
                       type="text"
                       placeholder="Enter your WhatsApp number"
-                      className="h-full p-2 md:px-3 md:py-3.5 rounded-lg w-full focus:outline-none placeholder:text-primary-Placeholder placeholder:text-[14px] placeholder:leading-[18.9px] placeholder:font-normal"
+                      className="h-full p-2 md:px-3 md:py-3.5 rounded-lg w-full focus:outline-none placeholder:text-primary-Placeholder placeholder:text-[14px] placeholder:leading-[18.9px] placeholder:font-normal max-h-[48px]"
                     />
                     <ErrorMessage
                       name="whatsappNumber"
@@ -351,7 +351,7 @@ const BookingForm = () => {
                       name="email"
                       type="email"
                       placeholder="Enter your email address"
-                      className="h-full p-2 md:px-3 md:py-3.5 rounded-lg w-full focus:outline-none placeholder:text-primary-Placeholder placeholder:text-[14px] placeholder:leading-[18.9px] placeholder:font-normal"
+                      className="h-full max-h-[48px] p-2 md:px-3 md:py-3.5 rounded-lg w-full focus:outline-none placeholder:text-primary-Placeholder placeholder:text-[14px] placeholder:leading-[18.9px] placeholder:font-normal"
                     />
                     <ErrorMessage
                       name="email"
@@ -430,7 +430,7 @@ const BookingForm = () => {
                     </div>
                     <button
                       type="submit"
-                      className="p-2.5 md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white font-semibold rounded-full"
+                      className="p-2.5 md:p-3 lg:px-5 xl:px-6 bg-[#DD720D] text-white hover:text-[#DD720D] hover:bg-white font-semibold rounded-full transform transition-all duration-200"
                     >
                       Proceed to checkout
                     </button>
